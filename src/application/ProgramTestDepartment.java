@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.DepartmentDao;
+import model.entities.Department;
 
 public class ProgramTestDepartment {
 
@@ -12,6 +13,10 @@ public class ProgramTestDepartment {
 		Scanner sc = new Scanner(System.in);
 		
 		DepartmentDao departmentDao = new DaoFactory().createDepartmentDao();
+		
+		System.out.println("======== TEST 1: department findById ========");
+		Department department = departmentDao.findById(3);
+		System.out.println(department);
 		
 		sc.close();
 
